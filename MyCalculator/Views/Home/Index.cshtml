@@ -1,0 +1,92 @@
+﻿@using MyCalculator.Calculator.Show;
+@model ExpressionModel
+
+@{
+    string userId = ViewBag.UserId;
+    ViewData["Title"] = "Calculator";
+}
+
+<a asp-action="Rules" user-id="@userId" is-translate="true" is-btn="true">Input rules</a>
+<br /><br />
+
+<form method="post" class="form-group">
+    <div asp-validation-summary=ModelOnly class="text-danger"></div>
+
+    <label user-id="@userId" is-translate="true">@Html.DisplayNameFor(e => e.Expression)</label>
+    <span asp-validation-for="Expression" user-id="@userId" is-translate="true" class="text-danger"></span>
+    <textarea asp-for="Expression" class="form-control _input" placeholder=@(Model?.Expression ?? "sin((4.1+3,1*(1-2)+1!)!)") 
+        user-id="@userId" required="required" rows="1">
+    </textarea>
+    <br />
+    <input type="submit" user-id="@userId" is-btn="true" is-submit="true" translate-value="Calculate!" />
+</form>
+
+@if (Model != null)
+{
+    <br />
+    ExpressionAndSolution expressionAndSolution = ViewBag.ExpressionAndSolution;
+
+    <answer expression-and-solution=@expressionAndSolution user-id="@userId"></answer>
+
+
+    var errors = expressionAndSolution.Errors;
+    int countOfErrors = errors.Count();
+    @if (countOfErrors != 0)
+    {
+        @if (countOfErrors > 1)
+        {
+            <ul>
+            @foreach (var error in errors)
+            {
+                string expression = error.Expression;
+                <li class="error">
+                    <span user-id="@userId" is-translate="true">@error.Message</span>
+                    <span user-id="@userId" is-translate="true">in expression</span>
+                    <span>@expression</span>
+                </li>
+            }
+           </ul>
+        }
+        else
+        {
+            Error error = errors.FirstOrDefault();
+            <p class="error">
+                <span user-id="@userId" is-translate="true">@(error?.Message ?? string.Empty)</span>
+                <span user-id="@userId" is-translate="true">in expression</span>
+                <span>@(error?.Expression ?? string.Empty)</span>
+            </p>
+        }
+    }
+
+    var warnings = expressionAndSolution.Warnings;
+    int countOfWarnings = warnings.Count();
+    @if (countOfWarnings != 0)
+    {
+        @if (countOfWarnings > 1)
+        {
+            <ul>
+            @foreach (var warning in warnings)
+            {
+                string expression = warning.Expression;
+                <li class="warning">
+                    <span user-id="@userId" is-translate="true">@warning.Message</span>
+                    <span user-id="@userId" is-translate="true">in expression</span>
+                    <span>@expression</span>
+                </li>
+            }
+           </ul>
+        }
+        else
+        {
+            Warning warning = warnings.FirstOrDefault();
+            <p class="warning">
+                <span user-id="@userId" is-translate="true">@(warning?.Message ?? string.Empty)</span>
+                <span user-id="@userId" is-translate="true">in expression</span>
+                <span>@(warning?.Expression ?? string.Empty)</span>
+            </p>
+        }
+    }
+
+
+    <solution expression-and-solution=@expressionAndSolution user-id="@userId"></solution>
+}

@@ -1,0 +1,52 @@
+﻿@{
+    string userId = ViewBag.UserId;
+    ViewData["Title"] = "Rules";
+    ViewBag.NowUrl = "/Home/Rules";
+}
+<a asp-action="Index" user-id="@userId" is-translate="true" is-btn="true">Back</a>
+<br /><br />
+<div style="text-align: left;margin-left:20%;">
+    <h5 user-id="@userId" is-translate="true">General:</h5>
+    <ul>
+        <li user-id="@userId" is-translate="true">Case and spaces do not matter</li>
+        <li>5cos(5) ~ cos(5)5 ~ 5*cos(5) ~ cos(5)*5</li> 
+        <li>5.0 ~ 5,0 ~ 5</li> 
+        <li>e &asymp; 2.71,  &pi; &asymp; 3.14</li>
+    </ul>
+    <h6 user-id="@userId" is-translate="true">Trigonometry:</h6>
+    <p>cos(5) = cos(5 rad), cos(5*) ~ cos((2+3)*) = cos(5&deg)</p>
+    <ul>
+        <li><span user-id="@userId" is-translate="true">Sinus</span>: sin(..)</li>
+        <li><span user-id="@userId" is-translate="true">Cosine</span>: cos(..)</li>
+        <li><span user-id="@userId" is-translate="true">Tangent</span>: tg(..) ~ tan(...)</li>
+        <li><span user-id="@userId" is-translate="true">Cotangent</span>: ctg(..)</li>
+        <li><span user-id="@userId" is-translate="true">Arcsinus</span>: arcsin(..) ~ asin(..)</li>
+        <li><span user-id="@userId" is-translate="true">Arccosine</span>: arccos(..) ~ acos(..)</li>
+        <li><span user-id="@userId" is-translate="true">Arctangent</span>: arctg(..) ~ atan(...)</li>
+        <li><span user-id="@userId" is-translate="true">Arccotangent</span>: arcctg(..)</li>
+        <li><span user-id="@userId" is-translate="true">Hyperbolic sinus</span>: sh(..) ~ sinh(..)</li>
+        <li><span user-id="@userId" is-translate="true">Hyperbolic cosine</span>: ch(..) ~ cosh(..)</li>
+        <li><span user-id="@userId" is-translate="true">Hyperbolic tangent</span>: th(..) ~ tanh(...)</li>
+        <li><span user-id="@userId" is-translate="true">Hyperbolic cotangent</span>: cth(..)</li>
+        <li><span user-id="@userId" is-translate="true">Hyperbolic arcsinus</span>: arsh(..) ~ asinh(..)</li>
+        <li><span user-id="@userId" is-translate="true">Hyperbolic arccosine</span>: arch(..) ~ acosh(..)</li>
+        <li><span user-id="@userId" is-translate="true">Hyperbolic arctangent</span>: arth(..) ~ atanh(...)</li>
+        <li><span user-id="@userId" is-translate="true">Hyperbolic arccotangent</span>: arcth(..)</li>
+    </ul>
+    <h5 user-id="@userId" is-translate="true">Factorial:</h5><p> 5! ~ (5)!</p>
+    <h5 user-id="@userId" is-translate="true">Exponent:</h5><p> exp(5) ~ e^5</p>
+    <h5 user-id="@userId" is-translate="true">Extent:</h5><p> 5^5 ~ (5)^5 ~ 5^(5) ~ (5)^(5)</p>
+    <h5 user-id="@userId" is-translate="true">Square root:</h5><p> sqrt(5)</p>
+    <h5 user-id="@userId" is-translate="true">Module:</h5><p> abs(-5) ~ |-5|</p>
+    <h5 user-id="@userId" is-translate="true">Logarithm:</h5><p> log5(5)</p>
+    <h5 user-id="@userId" is-translate="true">Natural logarithm:</h5><p> ln(5)</p>
+    <h5 user-id="@userId" is-translate="true">Brackets:</h5><p>(5)</p>
+    <h5 user-id="@userId" is-translate="true">Plus:</h5><p>+</p>
+    <h5 user-id="@userId" is-translate="true">Minus:</h5><p> -</p>
+    <h5 user-id="@userId" is-translate="true">Multiply:</h5><p> *</p>
+    <h5 user-id="@userId" is-translate="true">Divide:</h5><p> /</p>
+    <h5 user-id="@userId" is-translate="true">Remainder of the division:</h5><p> %</p>
+    <h5 user-id="@userId" is-translate="true">Maximum allowable result:</h5><p>8E+28</p>
+    <h5 user-id="@userId" is-translate="true">Minimum allowable result:</h5><p>-8E+28</p>
+</div>
+

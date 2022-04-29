@@ -1,0 +1,72 @@
+﻿details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: .5em .5em 0;
+    width: 80%;
+    margin-left: 10%;
+}
+
+summary {
+    font-weight: bold;
+    margin: -.5em -.5em 0;
+    padding: .5em;
+}
+
+details[open] {
+    padding: .5em;
+}
+
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: .5em;
+}
+
+header {
+    min-height: 25px;
+    width: 100%;
+    border: solid;
+    border-radius: 5px;
+    position: fixed;
+}
+
+body {
+    text-align: center;
+    margin: 0px;
+    font-style: oblique;
+}
+
+.without_oblique {
+    font-style: normal;
+}
+
+.solution {
+    min-height: 355px;
+}
+
+.warning {
+    color: yellow;
+}
+
+.error {
+    color: red;
+}
+
+._input {
+    width: 60%;
+    margin-left: 20%;
+    text-align: center;
+    font-style: oblique;
+}
+
+label {
+    font-weight: bold;
+}
+
+span, label {
+    font-style: oblique;
+}
+
+a:hover {
+    text-decoration-line: none;
+}
+

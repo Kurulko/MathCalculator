@@ -1,0 +1,33 @@
+﻿@model List<ExpressionAndSolution>
+
+@{
+    string userId = ViewBag.UserId;
+    ViewData["Title"] = "History";
+    ViewBag.NowUrl = "/History/Index";
+}
+<p user-id="@userId" is-translate="true">* Only correctly entered data is saved</p>
+<table user-id="@userId">
+    <thead>
+        <tr>
+            <th user-id="@userId" is-translate="true">Expression</th>
+            <th user-id="@userId" is-translate="true">Answer</th>
+            <th user-id="@userId" is-translate="true">Time</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="without_oblique">@item.ExpressionStr</td>
+            <td>@item.Answer</td>
+            <td>@item.Time.ToLongDateString()</td>
+            <td>
+                <a asp-action="Solution" asp-route-id=@item.Id class="btn btn-outline-primary" user-id="@userId" is-translate="true">Details</a>
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id=@item.Id class="btn btn-outline-danger" user-id="@userId" is-translate="true">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

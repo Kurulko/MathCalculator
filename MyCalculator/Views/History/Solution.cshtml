@@ -1,0 +1,13 @@
+﻿@using MyCalculator.Calculator.Show;
+@model ExpressionAndSolution
+
+@{
+    ViewData["Title"] = "Solution";
+    ViewBag.NowUrl = "/History/Solution";
+
+    if (Model != null)
+    {
+        ShowSolution show = new ShowSolution(Model);
+        <p class="without_oblique">@Html.Raw(show.Solution())</p>
+    }
+}

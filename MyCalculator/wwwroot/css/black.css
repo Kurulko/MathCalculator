@@ -1,0 +1,13 @@
+﻿header {
+    background-color: #191970;
+    color: #F0FFF0;
+}
+
+body {
+    color: #C0C0C0;
+    background-color: black;
+}
+
+input, textarea {
+    background-color:#1E90FF;
+}
